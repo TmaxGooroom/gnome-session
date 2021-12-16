@@ -1,0 +1,26 @@
+From: gangmo_seong <gangmo_seong@tmax.co.kr>
+Date: Fri, 15 Oct 2021 18:13:14 +0900
+Subject: [chore] change tos.json file : add enabled extension
+
+- monitor-settings-saver : preserves primary monitor setting
+
+[IMS] 269964
+---
+ data/tos.json.in | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index 6291ddc..bbb0779 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -10,7 +10,8 @@
+                           "tos-hotkey@@uuid_suffix@",
+                           "osk-hangul@@uuid_suffix@",
+                           "greeter@@uuid_suffix@",
+-			  "calibrator@@uuid_suffix@",
+-			  "screenshot@@uuid_suffix@"
++                          "calibrator@@uuid_suffix@",
++                          "screenshot@@uuid_suffix@",
++                          "monitor-settings-saver@@uuid_suffix@"
+                         ]
+ }

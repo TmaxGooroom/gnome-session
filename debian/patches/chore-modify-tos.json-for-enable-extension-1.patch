@@ -1,0 +1,22 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Wed, 21 Apr 2021 12:06:35 +0900
+Subject: [chore] modify tos.json for enable extension
+
+ - add tos-hotkey extension for enable extension list
+---
+ data/tos.json.in | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index 2e21717..74eb08c 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -7,6 +7,7 @@
+                           "arc-menu@@uuid_suffix@",
+                           "appindicator@@uuid_suffix@",
+                           "search@@uuid_suffix@",
+-                          "topicons-plus@@uuid_suffix@"
++                          "topicons-plus@@uuid_suffix@",
++                          "tos-hotkey@@uuid_suffix@"
+                         ]
+ }

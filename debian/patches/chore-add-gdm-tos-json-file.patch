@@ -1,0 +1,57 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Tue, 6 Jul 2021 17:11:35 +0900
+Subject: [chore] add gdm-tos json file
+
+ - add gdm-tos json file to customize greeter
+
+[IMS] N/A
+---
+ data/gdm-tos.json.in | 10 ++++++++++
+ data/meson.build     | 20 ++++++++++++--------
+ 2 files changed, 22 insertions(+), 8 deletions(-)
+ create mode 100644 data/gdm-tos.json.in
+
+diff --git a/data/gdm-tos.json.in b/data/gdm-tos.json.in
+new file mode 100644
+index 0000000..f1a0abe
+--- /dev/null
++++ b/data/gdm-tos.json.in
+@@ -0,0 +1,10 @@
++{
++    "parentMode": "gdm",
++    "allowSettings": "true",
++    "allowExtensions": "true",
++    "allowScreencast": "true",
++    "hasRunDialog": "true",
++    "hasWindows": "true",
++    "hasWmMenus": "true",
++    "isLocked": "false"
++}
+diff --git a/data/meson.build b/data/meson.build
+index b2cecea..f34a6d7 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -196,11 +196,15 @@ install_data(
+ 
+ tosmode_conf = configuration_data()
+ tosmode_conf.set('uuid_suffix', 'tmax-shell-extensions')
+-tosmode = 'tos.json'
+-configure_file(
+-  input: tosmode + '.in',
+-  output: tosmode,
+-  install: true,
+-  install_dir: join_paths(session_datadir, 'gnome-shell', 'modes'),
+-  configuration: tosmode_conf
+-)
++tosmodes = [ 'tos.json',
++            'gdm-tos.json']
++
++foreach tosmode : tosmodes
++  configure_file(
++    input: tosmode + '.in',
++    output: tosmode,
++    install: true,
++    install_dir: join_paths(session_datadir, 'gnome-shell', 'modes'),
++    configuration: tosmode_conf
++  )
++endforeach

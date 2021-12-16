@@ -1,0 +1,24 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Wed, 14 Jul 2021 11:51:22 +0900
+Subject: [chore] Add osk_hangul extension
+
+ - Add osk_hangul extension at enable extension list in tos.json
+
+[IMS] N/A
+---
+ data/tos.json.in | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index a4ac76d..d7ceda0 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -7,6 +7,7 @@
+                           "arc-menu@@uuid_suffix@",
+                           "appindicator@@uuid_suffix@",
+                           "search@@uuid_suffix@",
+-                          "tos-hotkey@@uuid_suffix@"
++                          "tos-hotkey@@uuid_suffix@",
++                          "osk-hangul@@uuid_suffix@"
+                         ]
+ }

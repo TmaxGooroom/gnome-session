@@ -1,0 +1,21 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Wed, 28 Apr 2021 11:31:59 +0900
+Subject: [chore] remove top-icons at tos.json
+
+ - remove unused extension(top-icons) at tos.json
+---
+ data/tos.json.in | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index 74eb08c..a4ac76d 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -7,7 +7,6 @@
+                           "arc-menu@@uuid_suffix@",
+                           "appindicator@@uuid_suffix@",
+                           "search@@uuid_suffix@",
+-                          "topicons-plus@@uuid_suffix@",
+                           "tos-hotkey@@uuid_suffix@"
+                         ]
+ }

@@ -1,0 +1,29 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Tue, 3 Aug 2021 14:35:59 +0900
+Subject: [chore] change gdm-tos.json file
+
+ - to customize greeter session change gdm-tos mode file
+
+[IMS] N/A
+---
+ data/gdm-tos.json.in | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/data/gdm-tos.json.in b/data/gdm-tos.json.in
+index f1a0abe..2735be0 100644
+--- a/data/gdm-tos.json.in
++++ b/data/gdm-tos.json.in
+@@ -1,10 +1,8 @@
+ {
+     "parentMode": "gdm",
+-    "allowSettings": "true",
+     "allowExtensions": "true",
+-    "allowScreencast": "true",
+-    "hasRunDialog": "true",
+     "hasWindows": "true",
+-    "hasWmMenus": "true",
+-    "isLocked": "false"
++    "components": [ "networkAgent", "polkitAgent" ],
++    "enabledExtensions": [ "greeter@tmax-shell-extensions",
++                           "osk-hangul@tmax-shell-extensions" ]
+ }

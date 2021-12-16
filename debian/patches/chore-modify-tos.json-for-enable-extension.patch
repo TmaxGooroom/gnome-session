@@ -1,0 +1,28 @@
+From: jungrae kim <jungrae_kim@tmax.co.kr>
+Date: Tue, 6 Apr 2021 16:08:30 +0900
+Subject: [chore] modify tos.json for enable extension
+
+ - modify tos.json for enable extension
+---
+ data/tos.json.in | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index 566bc93..2e21717 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -2,9 +2,11 @@
+     "parentMode": "user",
+     "enabledExtensions":[ "alternate-tab@@uuid_suffix@",
+                           "desktop-icons-ng@@uuid_suffix@",
+-                          "dash-to-panel@jderose9.github.com",
++                          "dash-to-panel@@uuid_suffix@",
+                           "notification-center@@uuid_suffix@",
+-                          "arc-menu@tmax",
+-                          "appindicator@@uuid_suffix@"
++                          "arc-menu@@uuid_suffix@",
++                          "appindicator@@uuid_suffix@",
++                          "search@@uuid_suffix@",
++                          "topicons-plus@@uuid_suffix@"
+                         ]
+ }

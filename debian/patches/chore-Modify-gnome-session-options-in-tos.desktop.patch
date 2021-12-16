@@ -1,0 +1,57 @@
+From: Gyumin Lim <gyumin_lim@tmax.co.kr>
+Date: Thu, 8 Apr 2021 15:02:34 +0900
+Subject: [chore] Modify gnome-session options in tos.desktop
+
+ - Modify gnome-session options to '--builtin --session=tos' in tos.desktop
+ - Comment out gnome.session file
+---
+ data/meson.build               | 2 +-
+ data/tos.desktop.in.in         | 6 +++---
+ data/tos.session.desktop.in.in | 5 +++--
+ 3 files changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/data/meson.build b/data/meson.build
+index b3a02a9..b2cecea 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -70,7 +70,7 @@ foreach name: desktops
+ endforeach
+ 
+ sessions = [
+-  'gnome',
++  #  'gnome',
+   #  'gnome-dummy',
+   'tos'
+ ]
+diff --git a/data/tos.desktop.in.in b/data/tos.desktop.in.in
+index 803f85e..3c0c1a1 100644
+--- a/data/tos.desktop.in.in
++++ b/data/tos.desktop.in.in
+@@ -1,11 +1,11 @@
+ [Desktop Entry]
+ Name[en_GB]=Tmax OS
+-Name[ko]=토스
++Name[ko]=티맥스오에스
+ Name=Tmax OS
+ Comment[en_GB]=This session logs you into Tmax OS
+-Comment[ko]=이 세션을 사용하면 토스에 로그인합니다
++Comment[ko]=이 세션을 사용하면 티맥스오에스에 로그인합니다
+ Comment=This session logs you into Tmax OS
+-Exec=env GNOME_SHELL_SESSION_MODE=tos gnome-session "$@"
++Exec=env GNOME_SHELL_SESSION_MODE=tos gnome-session --builtin --session=tos "$@"
+ TryExec=gnome-session
+ Type=Application
+ DesktopNames=TOS;GNOME;
+diff --git a/data/tos.session.desktop.in.in b/data/tos.session.desktop.in.in
+index 5eca64b..f88a6a9 100644
+--- a/data/tos.session.desktop.in.in
++++ b/data/tos.session.desktop.in.in
+@@ -1,5 +1,6 @@
+ [GNOME Session]
+ Name[en_GB]=Tmax OS
+-Name[ko]=토스
++Name[ko]=티맥스오에스
+ Name=Tmax OS
+-RequiredComponents=org.gnome.Shell;org.gnome.SettingsDaemon.A11ySettings;org.gnome.SettingsDaemon.Clipboard;org.gnome.SettingsDaemon.Color;org.gnome.SettingsDaemon.Datetime;org.gnome.SettingsDaemon.Housekeeping;org.gnome.SettingsDaemon.Keyboard;org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Mouse;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.PrintNotifications;org.gnome.SettingsDaemon.Rfkill;org.gnome.SettingsDaemon.ScreensaverProxy;org.gnome.SettingsDaemon.Sharing;org.gnome.SettingsDaemon.Smartcard;org.gnome.SettingsDaemon.Sound;org.gnome.SettingsDaemon.Wacom;org.gnome.SettingsDaemon.XSettings;
++# Must be in sync with gnome-session@gnome.target.d/gnome.session.conf drop-in
++RequiredComponents=org.gnome.Shell;org.gnome.SettingsDaemon.A11ySettings;org.gnome.SettingsDaemon.Color;org.gnome.SettingsDaemon.Datetime;org.gnome.SettingsDaemon.Housekeeping;org.gnome.SettingsDaemon.Keyboard;org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.PrintNotifications;org.gnome.SettingsDaemon.Rfkill;org.gnome.SettingsDaemon.ScreensaverProxy;org.gnome.SettingsDaemon.Sharing;org.gnome.SettingsDaemon.Smartcard;org.gnome.SettingsDaemon.Sound;org.gnome.SettingsDaemon.UsbProtection;org.gnome.SettingsDaemon.Wacom;org.gnome.SettingsDaemon.XSettings;

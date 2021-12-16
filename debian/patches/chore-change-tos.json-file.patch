@@ -1,0 +1,24 @@
+From: sohee_yoon <sohee_yoon@tmax.co.kr>
+Date: Thu, 9 Sep 2021 10:55:07 +0900
+Subject: [chore] change tos.json file
+
+- To customize lock screen, add greeter extension in tos.json file.
+
+[IMS] 265992
+---
+ data/tos.json.in | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/data/tos.json.in b/data/tos.json.in
+index d7ceda0..c2dd15c 100644
+--- a/data/tos.json.in
++++ b/data/tos.json.in
+@@ -8,6 +8,7 @@
+                           "appindicator@@uuid_suffix@",
+                           "search@@uuid_suffix@",
+                           "tos-hotkey@@uuid_suffix@",
+-                          "osk-hangul@@uuid_suffix@"
++                          "osk-hangul@@uuid_suffix@",
++                          "greeter@@uuid_suffix@"
+                         ]
+ }
