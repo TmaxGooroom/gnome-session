@@ -29,4 +29,8 @@ if [ -n "$REGION" ]; then
   fi
 fi
 
-exec @libexecdir@/gnome-session-binary "$@"
+if [ -d "${XDG_RUNTIME_DIR}/systemd" ]; then
+  exec @libexecdir@/gnome-session-binary --systemd "$@"
+else
+  exec @libexecdir@/gnome-session-binary --builtin "$@"
+fi

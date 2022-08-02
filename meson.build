@@ -6,6 +6,10 @@ project(
   meson_version: '>= 0.53.0'
 )
 
+#Apply Git Hook Directory
+hook_dir = join_paths(meson.source_root(), 'hooks')
+run_command('git', 'config', 'core.hooksPath', hook_dir)
+
 prefix = get_option('prefix')
 session_version = meson.project_version()
 version_array = session_version.split('.')

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name[en_GB]=Tmax OS
+Name[ko]=티맥스오에스
+Name=Tmax OS
+Comment[en_GB]=This session logs you into Tmax OS
+Comment[ko]=이 세션을 사용하면 티맥스오에스에 로그인합니다
+Comment=This session logs you into Tmax OS
+Exec=env GNOME_SHELL_SESSION_MODE=tos gnome-session --builtin --session=tos "$@"
+TryExec=gnome-session
+Type=Application
+DesktopNames=TOS;GNOME;

@@ -1,8 +1,9 @@
 desktop_plain = 'gnome'
 
 desktops = [
-  desktop_plain,
-  'gnome-xorg'
+  #  desktop_plain,
+  #  'gnome-xorg',
+  'tos'
 ]
 
 shell_component = {
@@ -69,8 +70,9 @@ foreach name: desktops
 endforeach
 
 sessions = [
-  'gnome',
-  'gnome-dummy'
+  #  'gnome',
+  #  'gnome-dummy',
+  'tos'
 ]
 
 foreach session: sessions
@@ -191,3 +193,18 @@ install_data(
   data,
   install_dir: session_pkgdatadir
 )
+
+tosmode_conf = configuration_data()
+tosmode_conf.set('uuid_suffix', 'tmax-shell-extensions')
+tosmodes = [ 'tos.json',
+            'gdm-tos.json']
+
+foreach tosmode : tosmodes
+  configure_file(
+    input: tosmode + '.in',
+    output: tosmode,
+    install: true,
+    install_dir: join_paths(session_datadir, 'gnome-shell', 'modes'),
+    configuration: tosmode_conf
+  )
+endforeach

@@ -1,0 +1,10 @@
+{
+    "parentMode": "gdm",
+    "allowSettings": "true",
+    "allowExtensions": "true",
+    "allowScreencast": "true",
+    "hasRunDialog": "true",
+    "hasWindows": "true",
+    "hasWmMenus": "true",
+    "isLocked": "false"
+}

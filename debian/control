@@ -5,8 +5,8 @@
 Source: gnome-session
 Section: gnome
 Priority: optional
-Maintainer: os1_3 <os1_3@tmax.co.kr>
-Uploaders: os1_3 <os1_3@tmax.co.kr>
+Maintainer: JungRae Kim <jungrae_kim@tmax.co.kr>
+Uploaders: JungRae Kim <jungrae_kim@tmax.co.kr>
 Build-Depends: debhelper-compat (= 13),
                dh-exec,
                git,
@@ -28,7 +28,7 @@ Build-Depends: debhelper-compat (= 13),
                libxrender-dev,
                libxt-dev,
                libxtst-dev,
-               meson (>= 0.53.0),
+               meson (>= 0.43.0),
                systemd [linux-any],
                xmlto,
                xsltproc,

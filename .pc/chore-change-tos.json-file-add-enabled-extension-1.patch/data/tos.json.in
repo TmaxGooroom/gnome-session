@@ -1,0 +1,16 @@
+{
+    "parentMode": "user",
+    "enabledExtensions":[ "alternate-tab@@uuid_suffix@",
+                          "desktop-icons-ng@@uuid_suffix@",
+                          "dash-to-panel@@uuid_suffix@",
+                          "notification-center@@uuid_suffix@",
+                          "arc-menu@@uuid_suffix@",
+                          "appindicator@@uuid_suffix@",
+                          "search@@uuid_suffix@",
+                          "tos-hotkey@@uuid_suffix@",
+                          "osk-hangul@@uuid_suffix@",
+                          "greeter@@uuid_suffix@",
+			  "calibrator@@uuid_suffix@",
+			  "screenshot@@uuid_suffix@"
+                        ]
+}

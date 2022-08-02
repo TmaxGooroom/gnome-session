@@ -529,17 +529,24 @@ main (int argc, char **argv)
                 }
         }
 
-        gsm_util_export_activation_environment (NULL);
+        gsm_util_export_activation_environment (&error);
+        if (error) {
+                g_warning ("Failed to upload environment to DBus: %s", error->message);
+                g_clear_error (&error);
+        }
 
         session_name = opt_session_name;
 
 #ifdef HAVE_SYSTEMD
-        gsm_util_export_user_environment (NULL);
+        gsm_util_export_user_environment (&error);
+        if (error) {
+                g_warning ("Failed to upload environment to systemd: %s", error->message);
+                g_clear_error (&error);
+        }
 #endif
 
 #ifdef ENABLE_SYSTEMD_SESSION
         if (use_systemd && !systemd_service) {
-                g_autoptr(GError) error = NULL;
                 g_autofree gchar *gnome_session_target;
                 const gchar *session_type;
 
@@ -571,6 +578,7 @@ main (int argc, char **argv)
 
                 /* We could not start the unit, fall back. */
                  g_warning ("Falling back to non-systemd startup procedure due to error: %s", error->message);
+                 g_clear_error (&error);
         }
 #endif /* ENABLE_SYSTEMD_SESSION */
 
@@ -593,6 +601,11 @@ main (int argc, char **argv)
 
                 g_free (ibus_path);
         }
+
+        /* Some third-party programs rely on GNOME_DESKTOP_SESSION_ID to
+         * detect if GNOME is running. We keep this for compatibility reasons.
+         */
+        gsm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
 
         /* We want to use the GNOME menus which has the designed categories.
          */

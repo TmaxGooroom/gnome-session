@@ -1,0 +1,10 @@
+{
+    "parentMode": "user",
+    "enabledExtensions":[ "alternate-tab@@uuid_suffix@",
+                          "desktop-icons-ng@@uuid_suffix@",
+                          "dash-to-panel@jderose9.github.com",
+                          "notification-center@@uuid_suffix@",
+                          "arc-menu@tmax",
+                          "appindicator@@uuid_suffix@"
+                        ]
+}

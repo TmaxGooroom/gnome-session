@@ -1,0 +1,8 @@
+{
+    "parentMode": "gdm",
+    "allowExtensions": "true",
+    "hasWindows": "true",
+    "components": [ "networkAgent", "polkitAgent" ],
+    "enabledExtensions": [ "greeter@tmax-shell-extensions",
+                           "osk-hangul@tmax-shell-extensions" ]
+}
